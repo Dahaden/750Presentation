@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+    <section class="" data-id="4ccff38fecf729804b0ad2590abc5d06">
+        <h1>DIFF TOOL</h1>
+        <div>Elliot Colquhoun</div>
+        <div>Janodya Moonamale</div>
+        <div>David Haden</div>
+    </section>
+    <section class="" data-id="7ff5d1ed44413cc4431d7a1a6d2a7a73">
+        <h2>
+            <font color="#cccccc">OVERVIEW</font>
+        </h2>
+        <p>
+    </p>
+    <ul>
+        <font color="#ffffff">
+            <li>Motivation</li>
+            <li>Related Work</li>
+            <li>Demo</li>
+            <li>Display</li>
+            <li>Importing Code</li>
+            <li>Code Architecture</li>
+            <li>Usability Testing</li>
+            <li>Challenges</li>
+			<li>Future Work</li>
+        </font>
+    </ul>
+    <p>
+</p>
+</section>
+<section class="" data-id="505319667df677e76f3e17ba3b6a703c">
+    <h2>MOTIVATION</h2>
+    <div>
+        <br>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <span style="text-align: center;">No easy way to navigate between code changes</span>
+                <br>
+            </li>
+            <li>
+                <span style="text-align: center;">Hard to see differences in files &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+            </li>
+        </ul>
+        <span>
+            <div>
+                <span>
+                    <br>
+                </span>
+                </div>Solution: DiffTool</span>
+            </div>
+            <div>
+                <br>
+                <ul>
+                    <li>
+                        <span style="text-align: center;">Use TreeView structure to navigate project</span>
+                        <br>
+                    </li>
+                    <li>
+                        <span style="text-align: center;">Aiming for fast and easy navigation</span>
+                    </li>
+                    <li>
+                        <span style="text-align: center;">Also linking changes to common sections &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="" data-id="f9c992d09b589bdb1e8d090c159b76cd">
+            <h2>Related work</h2>
+            <div>
+                <br>
+            </div>
+            <p>
+        </p>
+        <ul>
+            <li>
+                <span style="color: rgb(255, 255, 255); white-space: pre;">Verbaere,  Godfrey  and  Girba</span>
+                <br>
+            </li>
+            <li>
+                <span style="color: rgb(255, 255, 255); white-space: pre;">Hajiyev, Verbaere and de Moor</span>
+                <br>
+            </li>
+            <li>
+                <span style="color: rgb(255, 255, 255); white-space: pre;">Paul and Prakash</span>
+                <br>
+            </li>
+            <li>
+                <span style="color: rgb(255, 255, 255); white-space: pre;">Tiago, Hage and Rademaker</span>
+                <br>
+            </li>
+            <li>
+                <span style="color: rgb(255, 255, 255); white-space: pre;">Hindie  and  German</span>
+                <br>
+            </li>
+            <li>
+                <span style="color: rgb(255, 255, 255); white-space: pre;">Github</span>
+            </li>
+            <li>
+                <span style="color: rgb(255, 255, 255); white-space: pre;">TFS</span>
+            </li>
+        </ul>
+        <p>
+    </p>
+</section>
+<section class="" data-id="fe7acf2c7440afb36e57a108fd7227d7">
+    <h2>
+        <font color="#d9d9d9">DEMO</font>
+    </h2>
+</section>
+<section class="" data-id="6e8c16a0f366db47e4c27bf25abd4ec7">
+    <h2>
+        <font color="#d9d9d9">display</font>
+    </h2>
+    <div>
+        <br>
+    </div>
+    <div>
+
+
+
+
+
+
+
+<p class="p1">
+</p>
+<ul>
+    <li>
+        <font color="#ffffff">
+            <span style="text-align: center;">Uses trees to display the data</span>
+            <br>
+        </font>
+    </li>
+    <li>
+        <font color="#ffffff">
+            <span style="text-align: center;">Additions are coloured green&nbsp;</span>
+            <br>
+        </font>
+    </li>
+    <li>
+        <font color="#ffffff">
+            <span style="text-align: center;">Deletions are coloured red&nbsp;</span>
+            <br>
+        </font>
+    </li>
+    <li>
+        <font color="#ffffff">
+            <span style="text-align: center;">Common change locations displayed&nbsp;</span>
+            <br>
+        </font>
+    </li>
+    <li>
+        <font color="#ffffff">
+            <span style="text-align: center;">Modification preview in TreeView &nbsp;&nbsp;</span>
+            <br>
+        </font>
+    </li>
+    <li>
+        <span style="text-align: center;">
+            <font color="#ffffff">Obtain and show commit message</font>
+        </span>
+    </li>
+    <li>
+        <span style="text-align: center;">
+            <font color="#ffffff">Number of additions and deletions&nbsp;</font>
+        </span>
+        <br>
+    </li>
+</ul>
+<p>
+</p>
+
+
+
+
+</div>
+<div>
+</div>
+</section>
+<section class="" data-id="5210c2e71a7f97f93c6ed4fe18da23ba">
+    <h2>
+        <font color="#cccccc">
+            <span>Generating changes</span>
+        </font>
+    </h2>
+    <div>
+        <font color="#ffffff">Use of the&nbsp;<span>PDStore</span>
+        <span>&nbsp;IntelliJ plugin</span>
+    </font>
+</div>
+<div>
+    <span>
+        <font color="#ffffff">Modifications made to code using the TreeView</font>
+    </span>
+</div>
+<div>
+    <span>
+        <font color="#ffffff">Generates PDStore log file</font>
+    </span>
+</div>
+</section>
+<section class="" data-id="8f8035d0eed5981be3ff0029ca0b7913">
+    <h2>
+        <font color="#cccccc">Usability testing</font>
+    </h2>
+    <div>
+        <font color="#ffffff">
+            <br>
+        </font>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Sample size of 3 people</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">4 tasks to complete to test intuitive design</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Range of responses and times taken</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <span style="text-align: center;">
+                    <font color="#ffffff">Changes to the UI due to these responses</font>
+                </span>
+                <br>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <br>
+    </div>
+</section>
+<section class="" data-id="975064dca11b06db692f464503e5ddb6">
+    <h2>
+        <font color="#cccccc">CODE ARCHITECTURE</font>
+    </h2>
+    <div>
+        <br>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">MVC Pattern</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Refactoring drive late in the project</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Easy to modify and maintain</span>
+                    <br>
+                </font>
+            </li>
+        </ul>
+    </div>
+    <div>
+		<br>
+</div>
+</section>
+<section class="" data-id="c26fbe75c6e84e0184ddeab8fb527f1c">
+    <h2>UML</h2>
+    <div>
+        <img src="diffTool.png" style=" height: 569px; max-height: none; max-width: none;">
+        <br>
+    </div>
+</section>
+</section>
+        <br>
+</section>
+<section class="" data-id="65f55ab47b959cd947c8e80637a69398">
+    <h2>
+        <font color="#cccccc">CHALLENGES</font>
+    </h2>
+    <div>
+        <br>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">PDStore - understanding the system</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Mercurial - merge issues, case sensitivity</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Commit messages</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Multiple modifications per commit</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">PDHistoryView - getting changes</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <span style="text-align: center;">
+                    <font color="#ffffff">Complex, difficult to understand code</font>
+                </span>
+                <br>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        <br>
+    </div>
+</section>
+<section class="" data-id="fc445322d660316e2db5bc350d9861c9">
+    <h2>
+        <font color="#cccccc">FUTURE WORK</font>
+    </h2>
+    <div>
+        <br>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Initial commits of files</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Editing code without using the TreeView</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <span style="text-align: center;">
+                    <font color="#ffffff">Extension of UI and backend to show modifications</font>
+                </span>
+                <br>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        <br>
+    </div>
+</section>
+<section class="" data-id="cdbf7291e4ca90f0596f2c08e3225d05">
+    <h2>
+        <font color="#cccccc">Conclusions</font>
+    </h2>
+    <div>
+        <br>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Satisfactory progress made</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <font color="#ffffff">
+                    <span style="text-align: center;">Would like to add several features in the future</span>
+                    <br>
+                </font>
+            </li>
+            <li>
+                <span style="text-align: center;">
+                    <font color="#ffffff">Overall, created a useful tool for PDStore</font>
+                </span>
+                <br>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="" data-id="b87a5ca4e4e4ee732fa1b6b8db9ff153">
+    <h2>
+        <font color="#cccccc">QUESTIONS?</font>
+    </h2>
+</section>
+</div>
+
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
